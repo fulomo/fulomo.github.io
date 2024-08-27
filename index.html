@@ -1,3 +1,107 @@
-Floating Monster
+<!DOCTYPE html>
+<html>
+<head>
+<title>Floating Monster Token</title>
+<style>
+/* Respect system color preferences */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #333; /* Dark background */
+    color: #f0f0f0; /* Light text */
+  }
+  .button {
+    background-color: #ccda85; /* Light button on dark background */
+    color: #333; /* Dark text on light button */
+  }
+  .button:hover {
+    background-color: #b5bf6e; /* Slightly darker button on hover */
+  }
+}
 
-<img src="fm_icon.svg" alt="Logo">
+/* Default styles (light mode) */
+body {
+    font-family: sans-serif; 
+    background-color: #fff; /* White background */
+    color: #333; /* Dark text */
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f0f0f0; /* Light gray container */
+    border-radius: 20px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+h1 {
+    color: #6b7c8f; /* Bluish color for the title */
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+h2 { /* Style for subheadings */
+    color: #6b7c8f;
+    font-size: 1.5em;
+    margin-top: 40px; /* Add some spacing above subheadings */
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #d86676; /* Main color for the button */ 
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s; 
+}
+
+.button:hover {
+    background-color: #c14f60; /* Slightly darker main color on hover */
+}
+
+.logo {
+  width: 200px; /* Adjust as needed */
+  height: auto;
+  margin: 0 auto 50px; /* Center the .logo div itself */
+}
+
+.logo img {
+  display: block; /* Make the image a block-level element */
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo">
+        <img src="fm_icon.svg" alt="Floating Monster Logo" width="200px">
+    </div>
+
+    <h1>Floating Monster: Uncompromising Multichain Security</h1> 
+
+    <h2>The Problem with Multichain</h2>
+    <p>Most multichain projects compromise on security. This is because truly decentralized cross-chain communication is impossible with independent ledgers.</p>
+
+    <h2>The Floating Monster Solution</h2>
+    <p>Floating Monster takes a different approach. Our token exists simultaneously on all connected blockchains, creating a locked state that can only be altered by unanimous consensus across all ledgers.</p>
+
+    <h2>Unparalleled Security</h2>
+    <p>While this makes transactions in the locked state expensive, it also provides the combined security of all participating blockchains.</p>
+
+    <h2>Flexibility for Everyday Use</h2>
+    <p>For everyday use, tokens can be unlocked to a single ledger, functioning like any other token on that chain. Cross-chain transactions are also possible, with nodes incentivized through fees and required to lock assets on the destination ledger for added security.</p>
+
+    <a href="#" class="button">Explore Floating Monster</a>
+</div>
+
+</body>
+</html>
