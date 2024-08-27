@@ -2,49 +2,116 @@
 <html>
 <head>
 <title>Floating Monster Token</title>
+<link rel="icon" href="fm_icon.svg" type="image/svg+xml"> 
 <style>
+
 /* Respect system color preferences */
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: #333; /* Dark background */
-    color: #f0f0f0; /* Light text */
-  }
-  .button {
-    background-color: #ccda85; /* Light button on dark background */
-    color: #333; /* Dark text on light button */
-  }
-  .button:hover {
-    background-color: #b5bf6e; /* Slightly darker button on hover */
-  }
+    body {
+        background-color: #333; 
+        color: #f0f0f0; 
+    }
+    .button {
+        background-color: #ccda85; 
+        color: #333; 
+    }
+    .button:hover {
+        background-color: #b5bf6e; 
+    }
+    .nav a { /* Dark mode navigation link color */
+        color: #f0f0f0;
+    }
+    .nav a.active { /* Dark mode active link color */
+        color: #ccda85;
+    }
 }
 
 /* Default styles (light mode) */
 body {
     font-family: sans-serif; 
-    background-color: #fff; /* White background */
-    color: #333; /* Dark text */
-    text-align: center;
+    background-color: #fff; 
+    color: #333; 
+    margin: 0; 
 }
 
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #f0f0f0; /* Light gray container */
-    border-radius: 20px; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+/* Navigation styles */
+.nav {
+    background-color: #f0f0f0;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    padding: 20px 0;
+    z-index: 10; 
+}
+
+.nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    position: relative; 
+}
+
+.nav a.active {
+    color: #d86676;
+}
+
+.nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #d86676;
+}
+
+/* Content sections styles */
+section {
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    padding: 0 30px; 
+}
+
+#hero {
+    background-color: #fff;
+    padding-top: 80px; /* Add padding to the top to avoid overlap */
+}
+
+#hero .content { 
+    max-width: 600px; 
+    margin: 0 auto;
+}
+
+#features {
+    background-color: #f7f7f7; 
+}
+
+#use-cases {
+    background-color: #fff;
+}
+
+#roadmap {
+    background-color: #f7f7f7;
 }
 
 h1 {
-    color: #6b7c8f; /* Bluish color for the title */
+    color: #6b7c8f; 
     font-size: 3em;
     margin-bottom: 20px;
 }
 
-h2 { /* Style for subheadings */
+h2 { 
     color: #6b7c8f;
     font-size: 1.5em;
-    margin-top: 40px; /* Add some spacing above subheadings */
+    margin-top: 40px; 
 }
 
 p {
@@ -55,7 +122,7 @@ p {
 .button {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #d86676; /* Main color for the button */ 
+    background-color: #d86676; 
     color: #fff;
     text-decoration: none;
     border-radius: 10px;
@@ -63,45 +130,342 @@ p {
 }
 
 .button:hover {
-    background-color: #c14f60; /* Slightly darker main color on hover */
+    background-color: #c14f60; 
 }
 
-.logo {
-  width: 200px; /* Adjust as needed */
+/* Media queries for responsiveness */
+@media (max-width: 768px) { 
+    .container {
+        padding: 20px; 
+    }
+
+    h1 {
+        font-size: 2em; 
+    }
+
+    h2 {
+        font-size: 1em; 
+    }
+
+    .button {
+        padding: 12px 24px; 
+    }
+
+    #hero {
+        padding-top: 60px; /* Adjust padding for smaller screens if needed */
+    }
+}
+
+/* Social media icons */
+.social-icons {
+  margin-left: 20px; /* Add some space between navigation links and icons */
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 5px; /* Adjust spacing between icons */
+}
+
+.social-icons img {
+  width: 24px; /* Adjust icon size as needed */
   height: auto;
-  margin: 0 auto 50px; /* Center the .logo div itself */
 }
 
-.logo img {
-  display: block; /* Make the image a block-level element */
-  margin: 0 auto; /* Center the image horizontally */
+/* Content sections styles */
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;  
+
+    padding: 50px 30px;  /* Increase padding for more breathing room */
+    border-radius: 10px; /* Add rounded corners to sections */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#features {
+    background-color: #f7f7f7;
+    /* background-image: url('subtle-pattern.svg'); */ /* Add a subtle pattern (optional) */
+}
+
+#roadmap {
+    background-color: #f7f7f7;
+    /* background-image: url('subtle-pattern.svg'); */ /* Add a subtle pattern (optional) */
+}
+
+h2 {
+    color: #6b7c8f;
+    font-size: 1.5em;
+    margin-top: 40px;
+    font-weight: bold; /* Make subheadings bolder */
+}
+
+p {
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-weight: 300; /* Use a lighter font weight for paragraphs */
+}
+
+ul, ol { /* Style lists */
+    list-style: none; /* Remove default bullets/numbers */
+    padding: 0;
+    margin: 0 auto; /* Center the lists */
+    max-width: 500px; /* Adjust as needed */
+}
+
+li {
+    margin-bottom: 15px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+    border-radius: 5px;
+}
+
+/* Content sections styles */
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;  
+
+    padding: 0 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+section .hero {
+    display: flex;
+}
+
+#hero {
+    background-color: #fff;
+    position: relative; /* To position the SVG */
+}
+
+#hero .content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    position: relative; /* Ensure content is on top of the SVG */
+    z-index: 1;
+}
+
+#hero svg { /* Style the embedded SVG */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; /* Adjust size as needed */
+    height: auto;
+    opacity: 0.1; /* 10% opacity */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    .button {
+        padding: 12px 24px;
+    }
+
+    #hero .content {
+        grid-template-columns: 1fr;
+    }
+
+    #hero svg {
+        width: 200px;
+    }
+}
+
+/* Content sections styles */
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;  
+
+    padding: 0 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero section specific styles */
+#hero {
+    background-color: #fff;
+    padding-top: 80px;
+}
+
+#hero .content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid; /* Use grid for two-column layout in the hero section */
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Features, Use Cases, and Roadmap sections */
+#features,
+#use-cases,
+#roadmap {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two-column layout */
+    gap: 30px;
 }
 
 </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="logo">
-        <img src="fm_icon.svg" alt="Floating Monster Logo" width="200px">
+<nav class="nav">
+    <div>
+        <a href="#hero" class="active">Home</a>
+        <a href="#features">Features</a>
+        <a href="#use-cases">Use Cases</a>
+        <a href="#roadmap">Roadmap</a>
     </div>
+    <div class="social-icons">
+        <a href="https://t.me/fulomo" target="_blank">
+            <img src="telegram-icon.svg" alt="Telegram"> 
+        </a>
+        <!--
+        <a href="https://www.reddit.com/r/your_subreddit" target="_blank">
+            <img src="reddit-icon.svg" alt="Reddit"> 
+        </a>
+        <a href="https://discord.gg/your_discord_invite" target="_blank">
+            <img src="discord-icon.svg" alt="Discord"> 
+        </a>
+        -->
+    </div>
+</nav>
 
-    <h1>Floating Monster: Uncompromising Multichain Security</h1> 
+<section id="hero">
+    <div class="content"> 
+        <div>
+        <h1>Floating Monster</h1> 
+        <p>Uncompromising Multichain Security</p> 
 
-    <h2>The Problem with Multichain</h2>
-    <p>Most multichain projects compromise on security. This is because truly decentralized cross-chain communication is impossible with independent ledgers.</p>
+        <h2>The Problem with Multichain</h2>
+        <p>Most multichain projects compromise on security. This is because truly decentralized cross-chain communication is impossible with independent ledgers.</p>
 
-    <h2>The Floating Monster Solution</h2>
-    <p>Floating Monster takes a different approach. Our token exists simultaneously on all connected blockchains, creating a locked state that can only be altered by unanimous consensus across all ledgers.</p>
+        <h2>The Floating Monster Solution</h2>
+        <p>Floating Monster takes a different approach. Our token exists simultaneously on all connected blockchains, creating a locked state that can only be altered by unanimous consensus across all ledgers.</p>
+        </div>
+        <div>
 
-    <h2>Unparalleled Security</h2>
-    <p>While this makes transactions in the locked state expensive, it also provides the combined security of all participating blockchains.</p>
+          <img src="fm_icon.svg" width="150px">
 
-    <h2>Flexibility for Everyday Use</h2>
-    <p>For everyday use, tokens can be unlocked to a single ledger, functioning like any other token on that chain. Cross-chain transactions are also possible, with nodes incentivized through fees and required to lock assets on the destination ledger for added security.</p>
+        <h2>Unparalleled Security</h2>
+        <p>While this makes transactions in the locked state expensive, it also provides the combined security of all participating blockchains.</p>
 
-    <a href="#" class="button">Explore Floating Monster</a>
-</div>
+        <h2>Flexibility for Everyday Use</h2>
+        <p>For everyday use, tokens can be unlocked to a single ledger, functioning like any other token on that chain. Cross-chain transactions are also possible, with nodes incentivized through fees and required to lock assets on the destination ledger for added security.</p>
+        </div>
+
+        <!--
+        <a href="#" class="button">Explore Floating Monster</a>
+        -->
+    </div>
+</section>
+
+<section id="features"> 
+    <div>
+        <img src="features.jpeg" width="300px">
+    </div>
+    <div>
+    <h2>Key Features</h2>
+    <ul> 
+        <li>Simultaneous existence on multiple blockchains</li>
+        <li>Locked state for maximum security</li>
+        <li>Unlockable to a single ledger for convenience</li>
+        <li>Secure cross-chain transactions</li>
+        <li>Incentivized node participation</li>
+    </ul>
+    </div>
+</section>
+
+<section id="use-cases">
+    <div>
+    <h2>Use Cases</h2>
+    <p>Floating Monster is ideal for:</p>
+    <ul>
+        <li>High-value transactions requiring top-tier security</li>
+        <li>Decentralized applications demanding cross-chain functionality</li>
+        <li>Users seeking a secure and flexible multichain token</li>
+    </ul>
+    </div>
+    <div>
+        <img src="use_cases.jpeg" width="300px">
+    </div>
+</section>
+
+<section id="roadmap">
+    <div>
+        <img src="roadmap.jpeg" width="300px">
+    </div>
+    <div>
+    <h2>Roadmap</h2>
+    <p>Our roadmap includes:</p>
+    <ol>
+        <li>Launch on popular EVM-chains</li>
+        <li>Implement cross-chain bridging</li>
+        <li>Expand to additional blockchains</li>
+        <li>Develop further use cases and partnerships</li>
+    </ol>
+    </div>
+</section>
+
+<script>
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav a');
+
+// Function to update active link in the navigation
+function updateActiveLink() {
+  const currentSectionId = Array.from(sections)
+    .find(section => {
+      const rect = section.getBoundingClientRect();
+      return rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
+    })
+    ?.id;
+
+  navLinks.forEach(link => {
+    link.classList.toggle('active', link.hash === `#${currentSectionId}`);
+  });
+}
+
+// Add event listeners
+window.addEventListener('scroll', updateActiveLink);
+window.addEventListener('load', updateActiveLink); // Update on initial load
+
+// Smooth scrolling 
+navLinks.forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const targetSection = document.querySelector(link.hash);
+    targetSection.scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+</script>
 
 </body>
 </html>
